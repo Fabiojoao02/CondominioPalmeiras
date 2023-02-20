@@ -1,3 +1,4 @@
 1-Dará inicio ao projeto do Condominio Palmeiras
 	Localizado em Gravatal - bairro Termas - SC
-	Edificio com 8 pavimentos. 
+	Edificio com 8 pavimentos.
+2-Nesse episódio iremos trazer as bases de dados; 
