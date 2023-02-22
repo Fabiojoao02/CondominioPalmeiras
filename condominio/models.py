@@ -64,17 +64,6 @@ class Condominio(models.Model):
             raise ValidationError(error_messages)
 
 
-"""
-    CREATE TABLE "Blocos" (
-	"id_bloco"	INTEGER NOT NULL UNIQUE,
-	"Nome"	TEXT NOT NULL,
-	"Situacao"	TEXT NOT NULL DEFAULT 'A',
-	"id_condominio"	INTEGER NOT NULL,
-	FOREIGN KEY("id_condominio") REFERENCES "Condominio"("id_condominio"),
-	PRIMARY KEY("id_bloco" AUTOINCREMENT)
-"""
-
-
 class Bloco(models.Model):
     condominio = models.ForeignKey(Condominio, on_delete=models.CASCADE)
     nome = models.CharField(max_length=150)

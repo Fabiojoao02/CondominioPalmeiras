@@ -8,7 +8,8 @@ class BlocoInLine(admin.TabularInline):
 
 
 class CondominioAdmin(admin.ModelAdmin):
-    list_display = ['nome', 'Cidade', 'Estado', 'Bairro', 'Fracao_ideal_tem']
+    list_display = ['nome', 'Cidade', 'Estado',
+                    'Bairro', 'Fracao_ideal_tem']
     inlines = [
         BlocoInLine
     ]

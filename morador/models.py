@@ -10,7 +10,7 @@ class Morador(models.Model):
     nome = models.CharField(max_length=100)
     telefone = models.CharField(max_length=20)
     email = models.CharField(max_length=80)
-    situacao = models.CharField(max_length=1, default='A')
+    situacao = models.CharField(max_length=1, default='A', editable=False)
     cpf = models.CharField(max_length=11)
     data_nascimento = models.DateField()
     estado = models.CharField(
