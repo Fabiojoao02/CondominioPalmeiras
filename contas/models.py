@@ -4,6 +4,7 @@ from django.conf import settings
 
 class Contas(models.Model):
     nome = models.CharField(max_length=100)
+<<<<<<< HEAD
     operacao = models.CharField(
         max_length=2,
         choices=(
@@ -11,6 +12,15 @@ class Contas(models.Model):
             ('RA', 'Rateio'),
         )
     )
+=======
+    # operacao = models.CharField(
+    #    max_length=2,
+    #    choices=(
+    #        ('SI', 'Simples'),
+    #        ('RA', 'Rateio'),
+    #    )
+    # )
+>>>>>>> master
     situacao = models.CharField(max_length=1, default='A')
 
     def __str__(self) -> str:

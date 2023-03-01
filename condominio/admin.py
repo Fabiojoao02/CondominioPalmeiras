@@ -15,6 +15,7 @@ class CondominioAdmin(admin.ModelAdmin):
     ]
 
 
+<<<<<<< HEAD
 class Bloco_MoradorInLine(admin.TabularInline):
     model = models.Bloco_Morador
     extra = 1
@@ -38,3 +39,7 @@ class Bloco_MoradorAdmin(admin.ModelAdmin):
 admin.site.register(models.Condominio, CondominioAdmin)
 admin.site.register(models.Bloco, BlocoAdmin)
 admin.site.register(models.Bloco_Morador, Bloco_MoradorAdmin)
+=======
+admin.site.register(models.Condominio, CondominioAdmin)
+admin.site.register(models.Bloco)
+>>>>>>> master

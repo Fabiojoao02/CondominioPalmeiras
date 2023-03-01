@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+<<<<<<< HEAD
 import sys
+=======
+>>>>>>> master
 from pathlib import Path
 from django.contrib.messages import constants
 import os
@@ -36,6 +39,10 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'condominio',
     'contas',
+<<<<<<< HEAD
+=======
+    'morador',
+>>>>>>> master
     'perfil',
     'django.contrib.admin',
     'django.contrib.auth',

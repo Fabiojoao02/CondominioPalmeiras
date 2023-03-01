@@ -5,7 +5,10 @@ from django.conf import settings
 from django.forms import ValidationError
 
 import re
+<<<<<<< HEAD
 from utils.validacpf import valida_cpf
+=======
+>>>>>>> master
 
 
 class Condominio(models.Model):
@@ -14,6 +17,7 @@ class Condominio(models.Model):
     Cidade = models.CharField(max_length=100)
     Bairro = models.CharField(max_length=100)
     CEP = models.CharField(max_length=8)
+<<<<<<< HEAD
     Estado = models.CharField(
         max_length=2,
         default='SC',
@@ -47,6 +51,8 @@ class Condominio(models.Model):
             ('TO', 'Tocantins'),
         )
     )
+=======
+>>>>>>> master
     Fracao_ideal_tem = models.CharField(
         max_length=1,
         choices=(
@@ -54,6 +60,10 @@ class Condominio(models.Model):
             ('N', 'Não'),
         )
     )
+<<<<<<< HEAD
+=======
+    Estado = models.CharField(max_length=2)
+>>>>>>> master
     Foto = models.ImageField(
         upload_to='condominio_imagens', blank=True, null=True)
 
@@ -100,7 +110,11 @@ class Condominio(models.Model):
 class Bloco(models.Model):
     condominio = models.ForeignKey(Condominio, on_delete=models.CASCADE)
     nome = models.CharField(max_length=150)
+<<<<<<< HEAD
     situacao = models.CharField(max_length=1, default='A', editable=False)
+=======
+    situacao = models.CharField(max_length=1, default='A')
+>>>>>>> master
 
     def __str__(self) -> str:
         return self.nome or self.condominio.nome
@@ -108,6 +122,7 @@ class Bloco(models.Model):
     class Meta:
         verbose_name = 'Bloco'
         verbose_name_plural = 'Blocos'
+<<<<<<< HEAD
 
 
 class Bloco_Morador(models.Model):
@@ -159,3 +174,5 @@ class Bloco_Morador(models.Model):
     class Meta:
         verbose_name = 'Morador'
         verbose_name_plural = 'Moradores'
+=======
+>>>>>>> master
