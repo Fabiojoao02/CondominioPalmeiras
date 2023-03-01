@@ -14,6 +14,39 @@ class Condominio(models.Model):
     Cidade = models.CharField(max_length=100)
     Bairro = models.CharField(max_length=100)
     CEP = models.CharField(max_length=8)
+    Estado = models.CharField(
+        max_length=2,
+        default='SC',
+        choices=(
+            ('AC', 'Acre'),
+            ('AL', 'Alagoas'),
+            ('AP', 'Amapá'),
+            ('AM', 'Amazonas'),
+            ('BA', 'Bahia'),
+            ('CE', 'Ceará'),
+            ('DF', 'Distrito Federal'),
+            ('ES', 'Espírito Santo'),
+            ('GO', 'Goiás'),
+            ('MA', 'Maranhão'),
+            ('MT', 'Mato Grosso'),
+            ('MS', 'Mato Grosso do Sul'),
+            ('MG', 'Minas Gerais'),
+            ('PA', 'Pará'),
+            ('PB', 'Paraíba'),
+            ('PR', 'Paraná'),
+            ('PE', 'Pernambuco'),
+            ('PI', 'Piauí'),
+            ('RJ', 'Rio de Janeiro'),
+            ('RN', 'Rio Grande do Norte'),
+            ('RS', 'Rio Grande do Sul'),
+            ('RO', 'Rondônia'),
+            ('RR', 'Roraima'),
+            ('SC', 'Santa Catarina'),
+            ('SP', 'São Paulo'),
+            ('SE', 'Sergipe'),
+            ('TO', 'Tocantins'),
+        )
+    )
     Fracao_ideal_tem = models.CharField(
         max_length=1,
         choices=(
@@ -21,7 +54,6 @@ class Condominio(models.Model):
             ('N', 'Não'),
         )
     )
-    Estado = models.CharField(max_length=2)
     Foto = models.ImageField(
         upload_to='condominio_imagens', blank=True, null=True)
 
@@ -68,7 +100,18 @@ class Condominio(models.Model):
 class Bloco(models.Model):
     condominio = models.ForeignKey(Condominio, on_delete=models.CASCADE)
     nome = models.CharField(max_length=150)
-    situacao = models.CharField(max_length=1, default='A')
+    situacao = models.CharField(max_length=1, default='A', editable=False)
+
+    def __str__(self) -> str:
+        return self.nome or self.condominio.nome
+
+    class Meta:
+        verbose_name = 'Bloco'
+        verbose_name_plural = 'Blocos'
+
+
+class Bloco_Morador(models.Model):
+    bloco = models.ForeignKey(Bloco, on_delete=models.CASCADE)
     nome = models.CharField(max_length=100)
     telefone = models.CharField(max_length=20)
     email = models.CharField(max_length=80)
@@ -108,10 +151,11 @@ class Bloco(models.Model):
             ('TO', 'Tocantins'),
         )
     )
+    situacao = models.CharField(max_length=1, default='A')
 
     def __str__(self) -> str:
-        return self.nome or self.condominio.nome
+        return self.nome or self.bloco.nome
 
     class Meta:
-        verbose_name = 'Bloco'
-        verbose_name_plural = 'Blocos'
+        verbose_name = 'Morador'
+        verbose_name_plural = 'Moradores'
