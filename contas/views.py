@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from django.views.list import listView
+from django.views import View
 
-# Create your views here.
+
+class ListaCondominio(listView):
+    pass
