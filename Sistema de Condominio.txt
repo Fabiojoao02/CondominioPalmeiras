@@ -1,1 +1,12 @@
-Sistema de Condominio
+1-Dará inicio ao projeto do Condominio Palmeiras
+	Localizado em Gravatal - bairro Termas - SC
+	Edificio com 8 pavimentos.
+2-Nesse episódio iremos trazer as bases de dados; 
+3-Fazer ajustes de cargas entre uma maquina e outra;
+configurações de ambiente do django usuario:
+------------------------------
+USUARIO de condominio 
+usename: fabio
+email: fbianastacio@gmail.com
+senha: condominio
+-----------------------------
